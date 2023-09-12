@@ -1,0 +1,34 @@
+{% extends 'admin1/headerfooter.html' %}
+{% block content %}
+<div class="log-w3">
+<div class="w3layouts-main">
+	<h2>Sign In Now</h2>
+           <h5 style="color:red;text-align:center;">{{err}}</h5>
+
+		<form action="/adlogin/" method="post">{% csrf_token %}
+			{%if messs %}
+            <div class="alert alert-danger" role="alert">
+              {{messs}}
+            </div>
+            {% endif %}
+			
+			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
+			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
+			<span><input type="checkbox" />Remember Me</span>
+			<h6><a href="#">Forgot Password?</a></h6>
+				<div class="clearfix"></div>
+				<input type="submit" value="Sign In" >
+		</form>
+		<p>Don't Have an Account ?<a href="/regs/">Create an account</a></p>
+</div>
+</div>
+<script src="/static/admin/js/bootstrap.js"></script>
+<script src="/static/admin/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/static/admin/js/scripts.js"></script>
+<script src="/static/admin/js/jquery.slimscroll.js"></script>
+<script src="/static/admin/js/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/static/admin/js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="/static/admin/js/jquery.scrollTo.js"></script>
+</body>
+</html>
+{% endblock content %}
